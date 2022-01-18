@@ -1,0 +1,36 @@
+@use "skin" as *;
+@use "variables" as *;
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: url("../img/background.jpg");
+  background-color: #3a3a3a;
+  background-position: 50% 0;
+  align-items: center;
+}
+
+html {
+  font-family: verdana, arial, sans-serif;
+  font-size: 12px;
+}
+h2 {
+  margin: 10px 0;
+  color: #0b81be;
+  font-size: 2rem;
+  font-weight: normal;
+}
+p {
+  color: #858585;
+  line-height: 1.75;
+}
+
+.container {
+  max-width: $xl;
+  margin: auto;
+  padding: 100px $gap;
+}

@@ -1,0 +1,10 @@
+.main {
+  flex: 1 0 calc(100% - 300px);
+  padding: 0 20px 15px 15px;
+  order: 3;
+  background-color: #efefef;
+  p {
+    text-align: justify;
+  }
+
+}

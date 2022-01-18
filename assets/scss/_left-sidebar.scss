@@ -1,0 +1,42 @@
+.left-sidebar {
+  flex: 0 0 300px;
+  padding: 0 15px 15px 20px;
+  order: 2;
+  position: relative;
+  background-color: #efefef;
+  &::after {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    height: 90%;
+    content: "";
+    border-right: 1px solid #dddddd;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    position: relative;
+    padding: 7.5px;
+    list-style: none;
+    color: #858585;
+    font-style: italic;
+    &::before {
+    position: absolute;
+    margin-left: -15px;
+    content: url(../img/main-list-arrow.png);
+    }
+  }
+  &li span {
+    position: relative;
+  }
+  &li span::after {
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+    left: 0;
+    height: 1px;
+    content: "";
+    background-color: #dddddd;
+  }
+}
