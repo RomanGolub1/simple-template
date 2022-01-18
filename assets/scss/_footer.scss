@@ -1,5 +1,7 @@
 @use "skin" as *;
 @use "variables" as *;
+@use "mixins-media" as *;
+
 
 .footer {
   display: flex;
@@ -128,7 +130,7 @@
   .copyright {
     color: $white-color;
 
-    @include lg(+ 1) {
+    @include lg (+ 1) {
       margin: 57px 15px 15px 15px;
       text-align: right;
     }

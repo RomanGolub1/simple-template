@@ -1,5 +1,7 @@
 @use "skin" as *;
 @use "variables" as *;
+@use "mixins-media" as *;
+
 
 .bottom-sidebar {
   position: relative;

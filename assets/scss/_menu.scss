@@ -1,5 +1,7 @@
 @use "skin" as *;
 @use "variables" as *;
+@use "mixins-media" as *;
+
 
 .menu {
   position: relative;
@@ -79,7 +81,7 @@
   align-items: center;
   justify-content: center;
 
-  @include lg(-1) {
+  @include lg(- 1) {
     display: none;
   }
 
