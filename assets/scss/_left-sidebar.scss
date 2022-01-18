@@ -1,42 +1,60 @@
+@use "skin" as *;
+@use "variables" as *;
+
 .left-sidebar {
-  flex: 0 0 300px;
-  padding: 0 15px 15px 20px;
-  order: 2;
   position: relative;
-  background-color: #efefef;
-  &::after {
-    position: absolute;
-    top: 15px;
-    right: 0;
-    height: 90%;
-    content: "";
-    border-right: 1px solid #dddddd;
+  background-color: $light-color;
+
+  @include md {
+    flex: 0 0 300px;
+    padding: 0 15px 15px 20px;
+    order: 2;
+
+    &::after {
+      position: absolute;
+      top: 15px;
+      right: 0;
+      height: 90%;
+      content: "";
+      border-right: 1px solid #dddddd;
+    }
   }
+
+  @include md {
+flex: 1 0 100%;
+    padding: 0 $gap $gap $gap;
+    order: 3;
+  }
+
   ul {
     padding-left: 20px;
   }
+
   li {
     position: relative;
-    padding: 7.5px;
+    padding: $gap/2;
     list-style: none;
-    color: #858585;
+    color: $base-color;
     font-style: italic;
+
     &::before {
-    position: absolute;
-    margin-left: -15px;
-    content: url(../img/main-list-arrow.png);
+      position: absolute;
+      margin-left: -$gap - 5;
+      content: url("../img/main-list-arrow.png");
     }
-  }
-  &li span {
-    position: relative;
-  }
-  &li span::after {
-    position: absolute;
-    right: 0;
-    bottom: -10px;
-    left: 0;
-    height: 1px;
-    content: "";
-    background-color: #dddddd;
+
+    span {
+      position: relative;
+
+      &::after {
+        position: relative;
+        right: 0;
+        bottom: -$gap/2*2;
+        left: 0;
+        height: 1px;
+        content: "";
+        background-color: darken($light-color, 7%);
+      }
+    }
   }
 }

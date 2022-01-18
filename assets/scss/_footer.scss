@@ -1,0 +1,146 @@
+@use "skin" as *;
+@use "variables" as *;
+
+.footer {
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+
+  &-left {
+    @include lg-md {
+      flex: 0 0 60%;
+    }
+
+    @include md {
+      flex: 1 0 100%;
+    }
+
+    &-right {
+      @include lg-md {
+        flex: 0 0 40%;
+      }
+
+      @include md {
+        flex: 1 0 100%;
+      }
+    }
+    .wrapper {
+      display: flex;
+      margin-top: 37px;
+
+      @include md {
+        flex-wrap: wrap;
+      }
+    }
+    .menu {
+      @include sm {
+        justify-content: center;
+      }
+
+      &__btn {
+        display: none;
+      }
+
+      &__list {
+        @include lg {
+          top: initial;
+          bottom: 100%;
+        }
+
+        &-item {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .footer-logo {
+    margin: $gap - 5;
+
+    @include md (+ 1) {
+      text-align: right;
+    }
+
+    @include md {
+      text-align: center;
+    }
+  }
+
+  .twitter {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__imge {
+      flex: 0 0 55px;
+    }
+
+    &__description {
+      flex: 1 0 100px;
+
+      &-title {
+        display: block;
+        color: $white-color;
+        font-size: 2rem;
+      }
+
+      &-slogan {
+        color: #727272;
+      }
+    }
+
+    &__post {
+      position: relative;
+      flex: 1 0 calc(100% - 67px);
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.4);
+
+      @include sm(+ 1) {
+        margin: 12px 30px 30px 37px;
+      }
+
+      @include sm {
+        margin: 12px 0 30px 37px;
+      }
+
+      &::before {
+        position: absolute;
+        top: -19px;
+        left: 0;
+
+        content: url("../img/twitter-speech-bubble.png");
+      }
+    }
+
+    &__post-text {
+      color: $base-color;
+      line-height: 18px;
+    }
+
+    &__post-date {
+      color: $accent-color;
+      font-size: 0.83rem;
+      font-style: italic;
+    }
+  }
+
+  .copyright {
+    color: $white-color;
+
+    @include lg(+ 1) {
+      margin: 57px 15px 15px 15px;
+      text-align: right;
+    }
+
+    @include lg-md {
+      margin: $gap*4 15px 15px 15px;
+      text-align: right;
+    }
+
+    @include md {
+      margin: $gap*2 15px 15px 15px;
+      text-align: center;
+    }
+  }
+}

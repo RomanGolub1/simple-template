@@ -20,7 +20,7 @@
   }
   @include sm(+1) {
    flex: 1 0 100%;
-    padding: $gap(-5);
+    padding: $gap - 5;
   }
 
   p {
