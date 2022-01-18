@@ -1,8 +1,28 @@
+@use "skin" as *;
+@use "variables" as *;
+
+.container {
+  display: flex;
+  margin-bottom: 50px;
+  padding: 15px;
+  background: rgba($white-color, 0.1);
+  flex-wrap: wrap;
+}
+
+
 .main {
+  background-color: $light-color;
+
+  @include sm {
   flex: 1 0 calc(100% - 300px);
   padding: 0 20px 15px 15px;
   order: 3;
-  background-color: #efefef;
+  }
+  @include sm(+1) {
+   flex: 1 0 100%;
+    padding: $gap(-5);
+  }
+
   p {
     text-align: justify;
   }

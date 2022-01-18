@@ -507,16 +507,23 @@ h2 {
   font-weight: normal;
 }
 
+h3 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
 p {
   color: #858585;
 
   line-height: 1.75;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 100px 20px;
+i {
+  color: #424242;
+}
+
+li {
+  line-height: 1.5;
 }
 
 .wrapper {
@@ -545,14 +552,6 @@ p {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 200px;
   flex: 0 0 200px;
-}
-.headerimg {
-  border-style: none;
-}
-.headera {
-  text-decoration: none;
-
-  background-color: transparent;
 }
 
 .menu {
@@ -636,6 +635,19 @@ p {
   background: -webkit-gradient(linear, left top, left bottom, from(#0f8bbe), color-stop(50%, #2989d8), color-stop(51%, #207cca), to(#0eb7fe));
   background: -o-linear-gradient(top, #0f8bbe 0%, #2989d8 50%, #207cca 51%, #0eb7fe 100%);
   background: linear-gradient(to bottom, #0f8bbe 0%, #2989d8 50%, #207cca 51%, #0eb7fe 100%);
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  margin-bottom: 50px;
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .main {

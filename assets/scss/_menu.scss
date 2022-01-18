@@ -1,51 +1,81 @@
 @use "skin" as *;
+@use "variables" as *;
 
 .menu {
   position: relative;
   z-index: 9;
   display: flex;
   justify-content: flex-end;
-  &__btn {
-    flex-direction: column;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.25);
-    align-items: center;
-    justify-content: center;
-    &-row {
-      position: relative;
-      width: 60%;
-      height: 2px;
-      margin: 2px 0;
-      transition: all 0.5s;
-      background-color: $white-color;
-    }
+
+  @include sm(+1) {
+    flex: 1 0 200px;
   }
+  @include sm {
+    flex: 1 0 50px;
+  }
+
   &__list {
     display: flex;
-    min-height: 40px;
+    min-height: $gap-x2;
     margin: 0;
     padding: 0;
     list-style: none;
     align-items: center;
-    &-item {
-      display: block;
-      margin-left: 7px;
-      a {
-        display: block;
-        padding: 12px 15px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #efefef;
-        border-radius: 15px;
-      }
-      &li {
-        line-height: 1.5;
+    @include md {
+      position: absolute;
+      z-index: -999;
+      top: 100%;
+      right: -$gap(-5);
+      display: none;
+      flex-direction: column;
+      width: 100vw;
+      transition: opacity 0.5s;
+      opacity: 0;
+      background-color: rgba($black-color, 0.8);
+    }
+    &.active {
+      z-index: 1;
+      display: none;
+      opacity: 1;
+      .menu__list-item {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        a {
+          width: 100%;
+          padding: $gap(-5);
+          border-radius: 0;
+        }
       }
     }
   }
+
+  &__list-item {
+    display: block;
+    margin-left: 7px;
+    a {
+      display: block;
+      padding: 12px $gap(-5);
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $light-color;
+      border-radius: $gap(-5);
+    }
+    &:hover:not(.active)a{
+      background-color: rgba($white-color, 0.2);
+    }
+    &.active a {
+      background: linear-gradient(to bottom, #0f8bbe 0%,#2989d8 50%,#207cca 51%,#0eb7fe 100%);
+    }
+  }
 }
-.active a {
-  background: linear-gradient(to bottom, #0f8bbe 0%, #2989d8 50%, #207cca 51%, #0eb7fe 100%);
+
+.menu__btn {
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: rgba($black-color, 0.25);
+  align-items: center;
+  justify-content: center;
 }

@@ -18,19 +18,34 @@ html {
   font-family: verdana, arial, sans-serif;
   font-size: 12px;
 }
+
 h2 {
   margin: 10px 0;
-  color: #0b81be;
+  color: $accent-color;
   font-size: 2rem;
   font-weight: normal;
 }
+
+h3 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
 p {
-  color: #858585;
+  color: $base-color;
   line-height: 1.75;
 }
 
-.container {
-  max-width: $xl;
-  margin: auto;
-  padding: 100px $gap;
+i {
+  color: #424242;
+}
+
+li {
+  line-height: 1.5;
+}
+
+.wrapper {
+  max-width: 850px;
+  padding: 0 15px;
+  flex-grow: 1;
 }
