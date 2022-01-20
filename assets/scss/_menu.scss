@@ -6,46 +6,60 @@
 .menu {
   position: relative;
   z-index: 9;
+
   display: flex;
   justify-content: flex-end;
 
-  @include sm(+1) {
+  @include mdd {
     flex: 1 0 200px;
   }
-  @include sm {
+  @include md {
     flex: 1 0 50px;
   }
 
   &__list {
     display: flex;
+    align-items: center;
+
     min-height: $gap-x2;
     margin: 0;
     padding: 0;
+
     list-style: none;
-    align-items: center;
-    @include md {
+
+    @include lg {
       position: absolute;
       z-index: -999;
       top: 100%;
       right: -$gap - 5;
+
       display: none;
       flex-direction: column;
+
       width: 100vw;
+
       transition: opacity 0.5s;
+
       opacity: 0;
       background-color: rgba($black-color, 0.8);
     }
+
     &.active {
       z-index: 1;
-      display: none;
+
+      visibility: visible;
+
       opacity: 1;
+
       .menu__list-item {
         width: 100%;
         margin: 0;
+
         text-align: center;
         a {
           width: 100%;
-          padding: $gap - 5;
+          padding: 15px;
+
           border-radius: 0;
         }
       }
@@ -54,16 +68,22 @@
 
   &__list-item {
     display: block;
+
     margin-left: 7px;
+
     a {
       display: block;
-      padding: 12px $gap - 5;
+
+      padding: 12px 15px;
+
       text-decoration: none;
       text-transform: uppercase;
+
       color: $light-color;
-      border-radius: $gap - 5;
+      border-radius: 15px;
     }
-    &:hover:not(.active)a{
+
+    &:hover:not(.active) a {
       background-color: rgba($white-color, 0.2);
     }
     &.active a {
@@ -73,38 +93,46 @@
 }
 
 .menu__btn {
-  flex-direction: column;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  background-color: rgba($black-color, 0.25);
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 
-  @include lg(- 1) {
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+
+  background-color: rgba($black-color, 0.25);
+
+  @include lgg {
     display: none;
   }
-
   @include lg {
     display: flex;
   }
+
   &-row {
     position: relative;
+
     width: 60%;
     height: 2px;
     margin: 2px 0;
+
     transition: all 0.5s;
+
     background-color: $white-color;
   }
 
   &.active .menu-btn__row {
     &:first-of-type {
       top: 6px;
+
       transform: rotate(-135deg);
     }
 
     &:last-of-type {
       top: -6px;
+
       transform: rotate(-225deg);
     }
 

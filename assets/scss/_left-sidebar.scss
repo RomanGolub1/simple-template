@@ -5,43 +5,54 @@
 
 .left-sidebar {
   position: relative;
+
   background-color: $light-color;
 
   @include md {
     flex: 0 0 300px;
-    padding: 0 15px 15px 20px;
     order: 2;
+
+    padding: 0 15px 15px $gap;
 
     &::after {
       position: absolute;
       top: 15px;
       right: 0;
+
       height: 90%;
+
       content: "";
-      border-right: 1px solid #dddddd;
+
+      border-right: 1px solid darken($light-color, 7%);
     }
   }
-
   @include md {
-flex: 1 0 100%;
-    padding: 0 $gap $gap $gap;
+    flex: 1 0 100%;
     order: 3;
+
+    padding: 0 $gap $gap $gap;
   }
 
   ul {
-    padding-left: 20px;
+    padding-left: $gap;
   }
 
   li {
     position: relative;
-    padding: $gap/2;
+
+    padding: 15px/2;
+
     list-style: none;
+
     color: $base-color;
+
     font-style: italic;
 
     &::before {
       position: absolute;
-      margin-left: -$gap - 5;
+
+      margin-left: -15px;
+
       content: url("../img/main-list-arrow.png");
     }
 
@@ -51,10 +62,13 @@ flex: 1 0 100%;
       &::after {
         position: relative;
         right: 0;
-        bottom: -$gap/2*2;
+        //bottom: -15px/3*2;
         left: 0;
+
         height: 1px;
+
         content: "";
+
         background-color: darken($light-color, 7%);
       }
     }

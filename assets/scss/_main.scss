@@ -5,28 +5,31 @@
 
 .container {
   display: flex;
+  flex-wrap: wrap;
+
   margin-bottom: 50px;
   padding: 15px;
-  background: rgba($white-color, 0.1);
-  flex-wrap: wrap;
-}
 
+  background: rgba($white-color, 0.1);
+}
 
 .main {
   background-color: $light-color;
 
-  @include sm {
-  flex: 1 0 calc(100% - 300px);
-  padding: 0 20px 15px 15px;
-  order: 3;
+  @include md {
+    flex: 1 0 calc(100% - 300px);
+    order: 3;
+
+    padding: 0 $gap 15px 15px;
   }
-  @include sm(+1) {
-   flex: 1 0 100%;
-    padding: $gap - 5;
+  @include md {
+    flex: 1 0 100%;
+    order: 2;
+
+    padding: $gap;
   }
 
   p {
     text-align: justify;
   }
-
 }

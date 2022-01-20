@@ -1,135 +1,55 @@
 @use "variables" as *;
 @use "skin" as *;
 
-
-/* ul */
-@mixin ul-min {
-  @media (min-width: $ul) {
-    @content;
-  }
-}
-
-@mixin ul {
-  @media (max-width: ($ul - 0.2)) {
-    @content;
-  }
-}
-
-@mixin ul-xl {
-  @media (max-width: $ul - 0.2) and (min-width: $xl) {
-    @content;
-  }
-}
-
-@mixin ul-lg {
-  @media (max-width: ( $ul - 0.2)) and (min-width: $lg) {
-    @content;
-  }
-}
-
-@mixin ul-md {
-  @media (max-width: ($ul - 0.2)) and (min-width: $md) {
-    @content;
-  }
-}
-
-@mixin ul-sm {
-  @media (max-width: ($ul - 0.2)) and (min-width: $sm) {
-    @content;
-  }
-}
-
-
-
-/* xl */
-@mixin xl-min {
-  @media (min-width: $xl) {
-    @content;
-  }
-}
-
-@mixin xl {
-  @media (max-width: ($xl - 0.2)) {
-    @content;
-  }
-}
-
-@mixin xl-lg {
-  @media (max-width: ($xl - 0.2)) and (min-width: $lg) {
-    @content;
-  }
-}
-
-@mixin xl-md {
-  @media (max-width: ($xl - 0.2)) and (min-width: $md) {
-    @content;
-  }
-}
-
-@mixin xl-sm {
-  @media (max-width: ($xl - 0.2)) and (min-width: $sm) {
-    @content;
-  }
-}
-
-
 /* lg */
-@mixin lg-min {
-  @media (min-width: $lg) {
+@mixin lg {
+  @media (max-width: $lg) {
     @content;
   }
 }
 
-@mixin lg {
-  @media (max-width: ($lg - 0.2)) {
+@mixin lgg {
+  @media (max-width: $lg + 1) {
     @content;
   }
 }
 
 @mixin lg-md {
-  @media (max-width: ($lg - 0.2)) and (min-width: $md) {
+  @media (max-width: $lg) and (min-width: $md + 1) {
     @content;
   }
 }
-
-@mixin lg-sm {
-  @media (max-width: ($lg - 0.2)) and (min-width: $sm) {
-    @content;
-  }
-}
-
 
 /* md */
-@mixin md-min {
-  @media (min-width: $md) {
+@mixin md {
+  @media (max-width: $md) {
     @content;
   }
 }
-
-@mixin md {
-  @media (max-width: ($md - 0.2)) {
+@mixin mdd {
+  @media (max-width: $md + 1) {
     @content;
   }
 }
 
 @mixin md-sm {
-  @media (max-width: ($md - 0.2)) and (min-width: $sm) {
+  @media (max-width: $md) and (min-width: $sm +1) {
     @content;
   }
 }
 
-
 /* sm */
-@mixin sm-min {
+@mixin sm {
   @media (min-width: $sm) {
     @content;
   }
 }
 
-@mixin sm {
-  @media (max-width: ($sm - 0.2)) {
+@mixin smm {
+  @media (min-width: $sm + 1) {
     @content;
   }
 }
+
 
 

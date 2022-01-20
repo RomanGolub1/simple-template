@@ -5,12 +5,15 @@
 
 .bottom-sidebar {
   position: relative;
+
   display: flex;
   flex: 1 0 100%;
-  padding: $gap - 5;
-  background-color: $light-color;
   flex-wrap: wrap;
   order: 4;
+
+  padding: 15px;
+
+  background-color: $light-color;
 
   &::before {
     position: absolute;
@@ -18,7 +21,9 @@
     right: $gap - 6;
     bottom: $gap - 6;
     left: $gap - 6;
+
     content: "";
+
     background-color: darken($light-color, 7%);
   }
 
@@ -31,60 +36,74 @@
   }
 
   img {
-    padding: 0 $gutter $gutter 0;
+    padding: 0 15px 15px 0;
   }
-  &__left {
-    position: relative;
-    align-items: flex-start;
-    display: flex;
-    border: 5px solid $white-color;
-    background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 50%,#eeeeee 100%);
+}
 
-    @include md {
+.bottom-sidebar__left {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  border: 5px solid $white-color;
+  background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 50%,#eeeeee 100%);
+
+  @include md {
     flex: 1 0 50%;
+
+    padding: $gap 15px 25px;
+
     border-right: none;
-    padding: $gap 15px 25px;
 
-      &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        content: "";
-        border-right: 1px solid darken($light-color, 7%);
-      }
-    }
-    @include md {
-      flex: 1 0 100%;
-      padding: $gap - 5;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      height: 100%;
+
+      content: "";
+
+      border-right: 1px solid darken($light-color, 7%);
     }
   }
-  &__right {
-    position: relative;
-    display: flex;
-    border: 5px solid $white-color;
-    align-items: flex-start;
-    background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 50%,#eeeeee 100%);
+  @include md {
+    flex: 1 0 100%;
 
-    @include md {
+    padding: $gap - 5;
+  }
+}
+.bottom-sidebar__right {
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+
+  border: 5px solid $white-color;
+  background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 50%,#eeeeee 100%);
+
+  @include md {
     flex: 1 0 50%;
+
     padding: $gap 15px 25px;
+
     border-left: none;
+  }
+  @include md {
+    flex: 1 0 100%;
+
+    padding: $gap - 5;
+
+    p {
+      order: 1;
     }
 
-    @include md {
-      flex: 1 0 100%;
-      padding: $gap - 5;
+    img {
+      order: 2;
 
-      p {
-        order: 1;
-      }
-
-      img {
-        padding: 0 0 15px 15px;
-
-        order: 2;
-      }
+      padding: 0 0 15px 15px;
     }
   }
 }
+
