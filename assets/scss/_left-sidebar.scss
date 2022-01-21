@@ -1,6 +1,5 @@
 @use "skin" as *;
 @use "variables" as *;
-@use "mixins-media" as *;
 
 
 .left-sidebar {
@@ -8,7 +7,7 @@
 
   background-color: $light-color;
 
-  @include md {
+  @media (min-width: $small + 1) {
     flex: 0 0 300px;
     order: 2;
 
@@ -26,7 +25,7 @@
       border-right: 1px solid darken($light-color, 7%);
     }
   }
-  @include md {
+  @media (max-width: $small) {
     flex: 1 0 100%;
     order: 3;
 

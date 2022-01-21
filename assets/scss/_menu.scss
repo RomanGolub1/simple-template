@@ -1,6 +1,5 @@
 @use "skin" as *;
 @use "variables" as *;
-@use "mixins-media" as *;
 
 
 .menu {
@@ -10,10 +9,11 @@
   display: flex;
   justify-content: flex-end;
 
-  @include mdd {
+  @media (min-width: $small + 1) {
     flex: 1 0 200px;
   }
-  @include md {
+
+  @media (max-width: $small) {
     flex: 1 0 50px;
   }
 
@@ -27,7 +27,7 @@
 
     list-style: none;
 
-    @include lg {
+    @media (max-width: $large) {
       position: absolute;
       z-index: -999;
       top: 100%;
@@ -56,6 +56,7 @@
         margin: 0;
 
         text-align: center;
+
         a {
           width: 100%;
           padding: 15px;
@@ -66,7 +67,7 @@
     }
   }
 
-  &__list-item {
+  .menu__list-item {
     display: block;
 
     margin-left: 7px;
@@ -86,8 +87,9 @@
     &:hover:not(.active) a {
       background-color: rgba($white-color, 0.2);
     }
+
     &.active a {
-      background: linear-gradient(to bottom, #0f8bbe 0%,#2989d8 50%,#207cca 51%,#0eb7fe 100%);
+      background: linear-gradient(to bottom, #0f8bbe 0%, #2989d8 50%, #207cca 51%, #0eb7fe 100%);
     }
   }
 }
@@ -96,7 +98,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
+  display: flex;
   width: 50px;
   height: 50px;
 
@@ -104,10 +106,11 @@
 
   background-color: rgba($black-color, 0.25);
 
-  @include lgg {
+  @media (min-width: $large + 1) {
     display: none;
   }
-  @include lg {
+
+  @media (max-width: $large) {
     display: flex;
   }
 

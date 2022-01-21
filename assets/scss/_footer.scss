@@ -1,6 +1,5 @@
 @use "skin" as *;
 @use "variables" as *;
-@use "mixins-media" as *;
 
 
 .footer {
@@ -12,19 +11,21 @@
   background-color: rgba(0, 0, 0, 0.4);
 
   &-left {
-    @include lg-md {
+    @media (max-width: $large) and (min-width: $small + 1) {
       flex: 0 0 60%;
     }
-    @include md {
+
+    @media (max-width: $small) {
       flex: 1 0 100%;
     }
   }
 
   &-right {
-    @include lg-md {
+    @media (max-width: $large) and (min-width: $small + 1) {
       flex: 0 0 40%;
     }
-    @include md {
+
+    @media (max-width: $small) {
       flex: 1 0 100%;
     }
   }
@@ -34,13 +35,13 @@
 
     margin-top: 37px;
 
-    @include md {
+    @media (max-width: $small) {
       flex-wrap: wrap;
     }
   }
 
   .menu {
-    @include sm {
+    @media (max-width: $xsmall) {
       justify-content: center;
     }
 
@@ -49,7 +50,7 @@
     }
 
     &__list {
-      @include lg {
+      @media (max-width: $large) {
         top: initial;
         bottom: 100%;
       }
@@ -64,10 +65,11 @@
 .footer-logo {
   margin: 15px;
 
-  @include mdd {
+  @media (min-width: $small + 1) {
     text-align: right;
   }
-  @include md {
+
+  @media (max-width: $small) {
     text-align: center;
   }
 }
@@ -106,10 +108,11 @@
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.4);
 
-    @include smm {
+    @media (min-width: $xsmall + 1) {
       margin: 12px 30px 30px 37px;
     }
-    @include sm {
+
+    @media (max-width: $xsmall) {
       margin: 12px 0 30px 37px;
     }
 
@@ -139,18 +142,20 @@
 .copyright {
   color: $white-color;
 
-  @include  lgg  {
-    margin: 57px 15px 15px 15px;
+  @media (min-width: $large + 1) {
+    margin: 57px $gutter $gutter $gutter;
 
     text-align: right;
   }
-  @include lg-md {
-    margin: 75px 15px 15px 15px;
+
+  @media (max-width: $large) and (min-width: $small + 1) {
+    margin: $gutter*5 $gutter $gutter $gutter;
 
     text-align: right;
   }
-  @include md {
-    margin: $gap-x2 15px 15px 15px;
+
+  @media (max-width: $small) {
+    margin: $gutter*2 $gutter $gutter $gutter;
 
     text-align: center;
   }

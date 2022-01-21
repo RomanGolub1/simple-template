@@ -1,10 +1,9 @@
-@use "../../libs/normalize-scss/sass/normalize/_import-now";
+@use "node_modules/normalize.scss/normalize.scss";
 
 @use "variables";
 @use "skin";
 
 @use "mixins";
-@use "mixins-media";
 @use "extends";
 
 @use "common";

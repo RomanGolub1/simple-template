@@ -1,6 +1,5 @@
 @use "skin" as *;
 @use "variables" as *;
-@use "mixins-media" as *;
 
 .carousel {
   position: relative;
@@ -29,7 +28,7 @@
     background-size: cover;
     box-shadow: 0 0 1px  darken($light-color, 7%);
 
-    @include md {
+    @media (max-width: $small) {
       flex-wrap: wrap;
     }
 
@@ -39,16 +38,20 @@
 
       padding: $gap - 5;
 
-      @include lg {
+      @media (min-width: $large + 1) {
         flex: 0 0 250px;
       }
-      @include lg-md {
+
+      @media (max-width: $large) and (min-width: $small + 1) {
         flex: 0 0 220px;
       }
-      @include md {
+
+      @media (max-width: $small) {
         flex: 1 0 100%;
+
         justify-content: center;
       }
+
       img {
         max-width: 100%;
       }
@@ -62,41 +65,30 @@
     }
 
     &__text {
-      @include md {
-        flex-grow: 1;
+      @media (min-width: $small + 1) {
+        padding: $gutter $gutter*2 $gutter $gutter;
 
-        padding: 15px 30px 15px 15px;
+        flex-grow: 1;
       }
-      @include md {
+
+      @media (max-width: $small) {
         flex: 1 0 100%;
 
-        padding: 0 15px 15px 15px;
-      }
-      @include md {
-        flex-grow: 1;
-
-        margin-bottom: 15px;
-
-        text-align: justify;
+        padding: 0 $gutter $gutter $gutter;
       }
-      @include md {
-        margin: 0 0 15px 0;
-        margin-bottom: 0;
 
-        text-align: center;
-      }
 
       h3 {
         text-transform: uppercase;
 
         color: $white-color;
 
-        @include md {
+        @media (min-width: $small + 1) {
           flex-grow: 1;
 
           margin: 15px 0;
         }
-        @include md {
+        @media (max-width: $small) {
           overflow: hidden;
           flex: 1 0 100%;
 
@@ -108,6 +100,7 @@
           text-overflow: ellipsis;
         }
       }
+
       p {
         overflow: hidden;
 
@@ -117,6 +110,21 @@
 
         font-size: 1rem;
         line-height: 1.5;
+
+        @media (min-width: $small + 1) {
+          margin-bottom: $gutter;
+
+          text-align: justify;
+
+          flex-grow: 1;
+        }
+
+        @media (max-width: $small) {
+          margin: 0 0 $gutter 0;
+          margin-bottom: 0;
+
+          text-align: center;
+        }
       }
     }
   }

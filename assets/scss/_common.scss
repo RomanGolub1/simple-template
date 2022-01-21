@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: verdana, arial, sans-serif;
+  font-size: 12px;
+}
+
 body {
   display: flex;
   align-items: center;
@@ -15,10 +20,7 @@ body {
   background-position: 50% 0;
 }
 
-html {
-  font-family: verdana, arial, sans-serif;
-  font-size: 12px;
-}
+
 
 h2 {
   margin: 10px 0;
@@ -55,6 +57,6 @@ li {
 .wrapper {
   flex-grow: 1;
 
-  max-width: $lg;
+  max-width: $large;
   padding: 0 15px;
 }

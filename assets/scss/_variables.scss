@@ -1,8 +1,23 @@
 @use "sass:math";
 
-$lg: 850px;
-$md: 768px;
-$sm: 576px;
+$large: 850px;
+$small: 768px;
+$xsmall: 576px;
 
+$gutter: 15px;
 $gap: 20px;
 $gap-x2: $gap * 2;
+
+$col-size: 300px;
+
+@media (min-width: $large + 1) {
+}
+
+@media (max-width: $large) and (min-width: $small + 1) {
+}
+
+@media (max-width: $small) and (min-width: $xsmall + 1) {
+}
+
+@media (max-width: $xsmall) {
+}
