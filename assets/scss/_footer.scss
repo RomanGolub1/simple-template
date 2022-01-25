@@ -1,8 +1,7 @@
 @import 'skin';
 @import 'variables';
 
-.footer
-{
+.footer {
     display: flex;
 
     width: 100%;
@@ -11,104 +10,83 @@
 
     justify-content: center;
 
-    &-left
-    {
-        @media (max-width: $large) and (min-width: $small + 1)
-        {
+    &-left {
+        @media (max-width: $large) and (min-width: $small + 1) {
             flex: 0 0 60%;
         }
 
-        @media (max-width: $small)
-        {
+        @media (max-width: $small) {
             flex: 1 0 100%;
         }
     }
 
-    &-right
-    {
-        @media (max-width: $large) and (min-width: $small + 1)
-        {
+    &-right {
+        @media (max-width: $large) and (min-width: $small + 1) {
             flex: 0 0 40%;
         }
 
-        @media (max-width: $small)
-        {
+        @media (max-width: $small) {
             flex: 1 0 100%;
         }
     }
 
-    .wrapper
-    {
+    .wrapper {
         display: flex;
 
         margin-top: 37px;
 
-        @media (max-width: $small)
-        {
+        @media (max-width: $small) {
             flex-wrap: wrap;
         }
     }
 
-    .menu
-    {
-        @media (max-width: $xsmall)
-        {
+    .menu {
+        @media (max-width: $xsmall) {
             justify-content: center;
         }
 
-        &__btn
-        {
+        &__btn {
             display: none;
         }
 
-        &__list
-        {
-            @media (max-width: $large)
-            {
+        &__list {
+            @media (max-width: $large) {
                 top: initial;
                 bottom: 100%;
             }
 
-            &-item
-            {
+            &-item {
                 font-size: .9rem;
             }
         }
     }
 }
 
-.footer-logo
-{
+.footer-logo {
     margin: $gutter;
 
-    @media (min-width: $small + 1)
-    {
+    @media (min-width: $small + 1) {
         text-align: right;
     }
 
-    @media (max-width: $small)
-    {
+    @media (max-width: $small) {
         text-align: center;
     }
 }
 
-.twitter
-{
+.twitter {
     display: flex;
 
     flex-wrap: wrap;
 
-    &__image
-    {
+    &__image {
         flex: 0 0 55px;
     }
 
-    &__description
-    {
+    &__description {
         flex: 1 0 100px;
 
-        &-title
-        {
+        &-title {
             font-size: 2rem;
 
             display: block;
@@ -116,14 +94,12 @@
             color: $white-color;
         }
 
-        &-slogan
-        {
+        &-slogan {
             color: #727272;
         }
     }
 
-    &__post
-    {
+    &__post {
         position: relative;
 
         padding: 20px;
@@ -133,18 +109,15 @@
 
         flex: 1 0 calc(100% - 67px);
 
-        @media (min-width: $xsmall + 1)
-        {
+        @media (min-width: $xsmall + 1) {
             margin: 12px 30px 30px 37px;
         }
 
-        @media (max-width: $xsmall)
-        {
+        @media (max-width: $xsmall) {
             margin: 12px 0 30px 37px;
         }
 
-        &::before
-        {
+        &::before {
             position: absolute;
             top: -19px;
             left: 0;
@@ -153,15 +126,13 @@
         }
     }
 
-    &__post-text
-    {
+    &__post-text {
         line-height: 18px;
 
         color: $base-color;
     }
 
-    &__post-date
-    {
+    &__post-date {
         font-size: .83rem;
         font-style: italic;
 
@@ -169,26 +140,22 @@
     }
 }
 
-.copyright
-{
+.copyright {
     color: $white-color;
 
-    @media (min-width: $large + 1)
-    {
+    @media (min-width: $large + 1) {
         margin: 57px $gutter $gutter $gutter;
 
         text-align: right;
     }
 
-    @media (max-width: $large) and (min-width: $small + 1)
-    {
+    @media (max-width: $large) and (min-width: $small + 1) {
         margin: $gutter*5 $gutter $gutter $gutter;
 
         text-align: right;
     }
 
-    @media (max-width: $small)
-    {
+    @media (max-width: $small) {
         margin: $gutter*2 $gutter $gutter $gutter;
 
         text-align: center;

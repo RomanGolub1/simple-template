@@ -1,21 +1,18 @@
 @import 'skin';
 @import 'variables';
 
-.left-sidebar
-{
+.left-sidebar {
     position: relative;
 
     background-color: $light-color;
 
-    @media (min-width: $small + 1)
-    {
+    @media (min-width: $small + 1) {
         padding: 0 $gutter $gutter $gap;
 
         flex: 0 0 300px;
         order: 2;
 
-        &::after
-        {
+        &::after {
             position: absolute;
             top: $gutter;
             right: 0;
@@ -27,21 +24,18 @@
             border-right: 1px solid darken($light-color, 7%);
         }
     }
-    @media (max-width: $small)
-    {
+    @media (max-width: $small) {
         padding: 0 $gap $gap $gap;
 
         flex: 1 0 100%;
         order: 3;
     }
 
-    ul
-    {
+    ul {
         padding-left: $gap;
     }
 
-    li
-    {
+    li {
         font-style: italic;
 
         position: relative;
@@ -52,8 +46,7 @@
 
         color: $base-color;
 
-        &::before
-        {
+        &::before {
             position: absolute;
 
             margin-left: -$gutter;
@@ -61,12 +54,10 @@
             content: url('../img/main-list-arrow.png');
         }
 
-        span
-        {
+        span {
             position: relative;
 
-            &::after
-            {
+            &::after {
                 position: relative;
                 right: 0;
                 bottom: -10px;

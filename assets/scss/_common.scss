@@ -1,19 +1,16 @@
 @import 'skin';
 @import 'variables';
 
-*
-{
+* {
     box-sizing: border-box;
 }
 
-html
-{
+html {
     font-family: verdana, arial, sans-serif;
     font-size: 12px;
 }
 
-body
-{
+body {
     display: flex;
     flex-direction: column;
 
@@ -25,9 +22,7 @@ body
 }
 
 
-
-h2
-{
+h2 {
     font-size: 2rem;
     font-weight: normal;
 
@@ -36,36 +31,30 @@ h2
     color: $accent-color;
 }
 
-a
-{
+a {
     text-decoration: none;
 }
 
-h3
-{
+h3 {
     font-size: 2rem;
     font-weight: normal;
 }
 
-p
-{
+p {
     line-height: 1.75;
 
     color: $base-color;
 }
 
-i
-{
+i {
     color: #424242;
 }
 
-li
-{
+li {
     line-height: 1.5;
 }
 
-.wrapper
-{
+.wrapper {
     max-width: $large;
     padding: 0 $gutter;
 

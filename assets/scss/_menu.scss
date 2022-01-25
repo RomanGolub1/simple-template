@@ -1,8 +1,7 @@
 @import 'skin';
 @import 'variables';
 
-.menu
-{
+.menu {
     position: relative;
     z-index: 9;
 
@@ -10,18 +9,15 @@
 
     justify-content: flex-end;
 
-    @media (min-width: $small + 1)
-    {
+    @media (min-width: $small + 1) {
         flex: 1 0 200px;
     }
 
-    @media (max-width: $small)
-    {
+    @media (max-width: $small) {
         flex: 1 0 50px;
     }
 
-    &__list
-    {
+    &__list {
         display: flex;
 
         min-height: $gap-x2;
@@ -32,8 +28,7 @@
 
         align-items: center;
 
-        @media (max-width: $large)
-        {
+        @media (max-width: $large) {
             position: absolute;
             z-index: -999;
             top: 100%;
@@ -50,23 +45,20 @@
             background-color: rgba($black-color, .8);
         }
 
-        &.active
-        {
+        &.active {
             z-index: 1;
 
             visibility: visible;
 
             opacity: 1;
 
-            .menu__list-item
-            {
+            .menu__list-item {
                 width: 100%;
                 margin: 0;
 
                 text-align: center;
 
-                a
-                {
+                a {
                     width: 100%;
                     padding: $gutter;
 
@@ -76,14 +68,12 @@
         }
     }
 
-    &__list-item
-    {
+    &__list-item {
         display: block;
 
         margin-left: 7px;
 
-        a
-        {
+        a {
             display: block;
 
             padding: 12px $gutter;
@@ -95,20 +85,17 @@
             border-radius: $gutter;
         }
 
-        &:hover:not(.active) a
-        {
+        &:hover:not(.active) a {
             background-color: rgba($white-color, .2);
         }
 
-        &.active a
-        {
+        &.active a {
             background: linear-gradient(to bottom, #0f8bbe 0%, #2989d8 50%, #207cca 51%, #0eb7fe 100%);
         }
     }
 }
 
-.menu__btn
-{
+.menu__btn {
     display: flex;
     flex-direction: column;
 
@@ -122,18 +109,15 @@
     align-items: center;
     justify-content: center;
 
-    @media (min-width: $large + 1)
-    {
+    @media (min-width: $large + 1) {
         display: none;
     }
 
-    @media (max-width: $large)
-    {
+    @media (max-width: $large) {
         display: flex;
     }
 
-    &-row
-    {
+    &-row {
         position: relative;
 
         width: 60%;
@@ -145,24 +129,20 @@
         background-color: $white-color;
     }
 
-    &.active .menu-btn__row
-    {
-        &:first-of-type
-        {
+    &.active .menu-btn__row {
+        &:first-of-type {
             top: 6px;
 
             transform: rotate(-135deg);
         }
 
-        &:last-of-type
-        {
+        &:last-of-type {
             top: -6px;
 
             transform: rotate(-225deg);
         }
 
-        &:nth-of-type(2)
-        {
+        &:nth-of-type(2) {
             opacity: 0;
         }
     }

@@ -1,7 +1,5 @@
 $('.menu__btn').on('click', function () {
-    $(this).toggleClass('active').
-    next().
-    toggleClass('active');
+    $(this).toggleClass('active').next().toggleClass('active');
 });
 
 let $slideItems = $('.carousel-slide');
