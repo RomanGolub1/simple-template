@@ -1,21 +1,21 @@
 $('.menu__btn').on('click', function () {
     $(this).toggleClass('active').
     next().
-        toggleClass('active');
+    toggleClass('active');
 });
 
 let $slideItems = $('.carousel-slide');
 let $nextBtn = $('.next.carousel-control');
 let $prevBtn = $('.prev.carousel-control');
-let $currentSlide = 0;
+let currentSlide = 0;
 
-let  gotoSlide = (n) => {
-    $slideItems[$currentSlide].classList.toggle('active');
+let gotoSlide = (n) => {
+    $slideItems[currentSlide].classList.toggle('active');
     currentSlide = (n + $slideItems.length) % $slideItems.length;
     $slideItems[currentSlide].classList.toggle('active');
 };
 
-let  nextSlide = () => {
+let nextSlide = () => {
     gotoSlide(currentSlide + 1);
 };
 
@@ -38,4 +38,4 @@ let prevClickHandler = () => {
 };
 
 $nextBtn.on('click', nextClickHandler);
-$prevBtn.on('click', nextClickHandler);
+$prevBtn.on('click', prevClickHandler);

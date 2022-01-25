@@ -1,16 +1,16 @@
-@use "node_modules/normalize.scss/normalize.scss";
+@import 'node_modules/normalize-scss/sass/normalize/import-now';
 
-@use "variables";
-@use "skin";
+@import 'variables';
+@import 'skin';
 
-@use "mixins";
-@use "extends";
+@import 'mixins';
+@import 'extends';
 
-@use "common";
-@use "header";
-@use "menu";
-@use "main";
-@use "carousel";
-@use "left-sidebar";
-@use "bottom-sidebar";
-@use "footer";
+@import 'common';
+@import 'header';
+@import 'menu';
+@import 'main';
+@import 'carousel';
+@import 'left-sidebar';
+@import 'bottom-sidebar';
+@import 'footer';

@@ -1,13 +1,14 @@
-@use "skin" as *;
+.header
+{
+    display: flex;
 
-.header {
-  display: flex;
-  align-items: center;
-  flex: 1 0 100%;
+    margin: 34px 0;
 
-  margin: 34px 0;
+    align-items: center;
+    flex: 1 0 100%;
 
-  &-logo {
-    flex: 0 0 200px;
-  }
+    &-logo
+    {
+        flex: 0 0 200px;
+    }
 }

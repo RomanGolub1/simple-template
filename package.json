@@ -1,5 +1,5 @@
 {
-  "name": "simple-template",
+  "name": "gulp-temp",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -17,13 +17,14 @@
     "gulp-sass": "^5.0.0",
     "gulp-terser": "^2.0.1",
     "gulp-uglify": "^3.0.2",
+    "jquery": "^3.6.0",
     "node-normalize-scss": "^8.1.2",
     "postcss": "^8.3.6",
     "sass": "^1.37.5",
     "sort-css-media-queries": "^2.0.4"
   },
   "dependencies": {
-    "normalize-scss": "^7.0.1",
-    "normalize.scss": "^0.1.0"
+    "modern-normalize": "^1.1.0",
+    "normalize-scss": "^7.0.1"
   }
 }

@@ -1,110 +1,125 @@
-@use "skin" as *;
-@use "variables" as *;
+@import 'skin';
+@import 'variables';
 
+.bottom-sidebar
+{
+    position: relative;
 
-.bottom-sidebar {
-  position: relative;
+    display: flex;
 
-  display: flex;
-  flex: 1 0 100%;
-  flex-wrap: wrap;
-  order: 4;
+    padding: $gutter;
 
-  padding: 15px;
+    background-color: $light-color;
 
-  background-color: $light-color;
-
-  &::before {
-    position: absolute;
-    top: $gap - 6;
-    right: $gap - 6;
-    bottom: $gap - 6;
-    left: $gap - 6;
-
-    content: "";
-
-    background-color: darken($light-color, 7%);
-  }
-
-  p {
-    margin: 0;
-
-    color: $base-color;
-
-    line-height: 1.5em;
-  }
-
-  img {
-    padding: 0 15px 15px 0;
-  }
-}
-
-.bottom-sidebar__left {
-  position: relative;
-
-  display: flex;
-  align-items: flex-start;
-
-  border: 5px solid $white-color;
-  background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 50%,#eeeeee 100%);
-
-  @media (min-width: $small + 1)  {
-    flex: 1 0 50%;
-
-    padding: $gap 15px 25px;
-
-    border-right: none;
-
-    &::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-
-      height: 100%;
-
-      content: "";
-
-      border-right: 1px solid darken($light-color, 7%);
-    }
-  }
-  @media (max-width: $small) {
     flex: 1 0 100%;
+    flex-wrap: wrap;
+    order: 4;
 
-    padding: $gap - 5;
-  }
-}
+    &::before
+    {
+        position: absolute;
+        top: $gutter - 1;
+        right: $gutter - 1;
+        bottom: $gutter - 1;
+        left: $gutter - 1;
 
-.bottom-sidebar__right {
-  position: relative;
+        content: '';
 
-  display: flex;
-  align-items: flex-start;
-
-  border: 5px solid $white-color;
-  background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 50%,#eeeeee 100%);
-
-  @media (min-width: $small + 1) {
-    flex: 1 0 50%;
-
-    padding: 20px $gutter 25px;
-
-    border-left: none;
-  }
-
-  @media (max-width: $small) {
-    flex: 1 0 100%;
-
-    padding: $gap - 5;
-
-    p {
-      order: 1;
+        background-color: darken($light-color, 7%);
     }
 
-    img {
-      order: 2;
+    p
+    {
+        line-height: 1.5em;
 
-      padding: 0 0 15px 15px;
+        margin: 0;
+
+        color: $base-color;
     }
-  }
+
+    img
+    {
+        padding: 0 $gutter $gutter 0;
+    }
 }
 
+.bottom-sidebar__left
+{
+    position: relative;
+
+    display: flex;
+
+    border: 5px solid $white-color;
+
+    align-items: flex-start;
+    @extend %linear-gradient;
+
+    @media (min-width: $small + 1)
+    {
+        padding: $gap $gutter 25px;
+
+        border-right: none;
+
+        flex: 1 0 50%;
+
+        &::after
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            height: 100%;
+
+            content: '';
+
+            border-right: 1px solid darken($light-color, 7%);
+        }
+    }
+    @media (max-width: $small)
+    {
+        padding: $gutter;
+
+        flex: 1 0 100%;
+    }
+}
+
+.bottom-sidebar__right
+{
+    position: relative;
+
+    display: flex;
+
+    border: 5px solid $white-color;
+    background: linear-gradient(to bottom, #fff 0%, #f5f5f5 50%, #eee 100%);
+
+    align-items: flex-start;
+    @extend %linear-gradient;
+
+    @media (min-width: $small + 1)
+    {
+        padding: $gap $gutter 25px;
+
+        border-left: none;
+
+        flex: 1 0 50%;
+    }
+
+    @media (max-width: $small)
+    {
+        padding: $gutter;
+
+        flex: 1 0 100%;
+
+        p
+        {
+            order: 1;
+        }
+
+        img
+        {
+            padding: 0 0 $gutter $gutter;
+
+            order: 2;
+        }
+    }
+}

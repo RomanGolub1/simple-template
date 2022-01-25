@@ -1,34 +1,39 @@
-@use "skin" as *;
-@use "variables" as *;
+@import 'skin';
+@import 'variables';
 
+.container
+{
+    display: flex;
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
+    margin-bottom: 50px;
+    padding: $gutter;
 
-  margin-bottom: 50px;
-  padding: 15px;
+    background: rgba($white-color, .1);
 
-  background: rgba($white-color, 0.1);
+    flex-wrap: wrap;
 }
 
-.main {
-  background-color: $light-color;
+.main
+{
+    background-color: $light-color;
 
-  @media (min-width: $small + 1){
-    flex: 1 0 calc(100% - 300px);
-    order: 3;
+    @media (min-width: $small + 1)
+    {
+        padding: 0 $gap $gutter $gutter;
 
-    padding: 0 $gap 15px 15px;
-  }
-  @media (max-width: $small) {
-    flex: 1 0 100%;
-    order: 2;
+        flex: 1 0 calc(100% - 300px);
+        order: 3;
+    }
+    @media (max-width: $small)
+    {
+        padding: $gap;
 
-    padding: $gap;
-  }
+        flex: 1 0 100%;
+        order: 2;
+    }
 
-  p {
-    text-align: justify;
-  }
+    p
+    {
+        text-align: justify;
+    }
 }

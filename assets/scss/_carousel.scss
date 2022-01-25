@@ -1,150 +1,177 @@
-@use "skin" as *;
-@use "variables" as *;
+@import 'skin';
+@import 'variables';
 
-.carousel {
-  position: relative;
-
-  order: 1;
-
-  width: 100%;
-  padding: 15px;
-
-  background-color: #efefef;
-  &-slides {
+.carousel
+{
     position: relative;
-  }
-  &-slide {
+
+    width: 100%;
+    padding: $gutter;
+
+    background-color: $light-color;
+
+    order: 1;
+}
+.carousel-slides
+{
+    position: relative;
+}
+.carousel-slide
+{
     position: absolute;
     top: 0;
 
     display: flex;
 
-    transition: opacity 0.5s;
+    transition: opacity .5s;
 
     opacity: 0;
-    border: 7px solid #ffffff;
+    border: 7px solid #fff;
     background-image: url(../img/carousel-item-bg.png);
     background-position: 50% 50%;
     background-size: cover;
-    box-shadow: 0 0 1px  darken($light-color, 7%);
+    box-shadow: 0 0 1px darken($light-color, 7%);
 
-    @media (max-width: $small) {
-      flex-wrap: wrap;
+    @media (max-width: $small)
+    {
+        flex-wrap: wrap;
     }
 
-    &__image {
-      display: flex;
-      align-items: center;
+    &.active
+    {
+        position: relative;
+        z-index: 1;
 
-      padding: $gap - 5;
+        opacity: 1;
+    }
+}
 
-      @media (min-width: $large + 1) {
+.carousel-slide__image
+{
+    display: flex;
+
+    padding: $gutter;
+
+    align-items: center;
+
+    @media (min-width: $large + 1)
+    {
         flex: 0 0 250px;
-      }
+    }
 
-      @media (max-width: $large) and (min-width: $small + 1) {
+    @media (max-width: $large) and (min-width: $small + 1)
+    {
         flex: 0 0 220px;
-      }
+    }
 
-      @media (max-width: $small) {
+    @media (max-width: $small)
+    {
         flex: 1 0 100%;
-
         justify-content: center;
-      }
+    }
 
-      img {
+    img
+    {
         max-width: 100%;
-      }
     }
+}
 
-    &.active {
-      position: relative;
-      z-index: 1;
 
-      opacity: 1;
-    }
 
-    &__text {
-      @media (min-width: $small + 1) {
+.carousel-slide__text
+{
+    @media (min-width: $small + 1)
+    {
         padding: $gutter $gutter*2 $gutter $gutter;
 
         flex-grow: 1;
-      }
+    }
 
-      @media (max-width: $small) {
-        flex: 1 0 100%;
-
+    @media (max-width: $small)
+    {
         padding: 0 $gutter $gutter $gutter;
-      }
+
+        flex: 1 0 100%;
+    }
 
 
-      h3 {
+    h3
+    {
         text-transform: uppercase;
 
         color: $white-color;
 
-        @media (min-width: $small + 1) {
-          flex-grow: 1;
+        @media (min-width: $small + 1)
+        {
+            margin: $gutter 0;
 
-          margin: 15px 0;
+            flex-grow: 1;
         }
-        @media (max-width: $small) {
-          overflow: hidden;
-          flex: 1 0 100%;
+        @media (max-width: $small)
+        {
+            overflow: hidden;
 
-          max-width: calc(100vw - 135px);
-          margin: 0 0 15px 0;
+            max-width: calc(100vw - 135px);
+            margin: 0 0 $gutter 0;
 
-          text-align: center;
-          white-space: nowrap;
-          text-overflow: ellipsis;
+            text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            flex: 1 0 100%;
         }
-      }
+    }
 
-      p {
+    p
+    {
+        font-size: 1rem;
+        line-height: 1.5;
+
         overflow: hidden;
 
         max-height: 70px;
 
         color: $white-color;
 
-        font-size: 1rem;
-        line-height: 1.5;
+        @media (min-width: $small + 1)
+        {
+            margin-bottom: $gutter;
 
-        @media (min-width: $small + 1) {
-          margin-bottom: $gutter;
+            text-align: justify;
 
-          text-align: justify;
-
-          flex-grow: 1;
+            flex-grow: 1;
         }
 
-        @media (max-width: $small) {
-          margin: 0 0 $gutter 0;
-          margin-bottom: 0;
+        @media (max-width: $small)
+        {
+            margin: 0 0 $gutter 0;
+            margin-bottom: 0;
 
-          text-align: center;
+            text-align: center;
         }
-      }
     }
-  }
-  .carousel-control {
+}
+
+.carousel-control
+{
     position: absolute;
     z-index: 2;
     top: 50%;
 
-    img {
-      margin-top: -15px;
+    img
+    {
+        margin-top: -$gutter;
     }
 
-    &.prev {
-      left: 3px;
+    &.prev
+    {
+        left: 3px;
     }
 
-    &.next {
-      right: 3px;
+    &.next
+    {
+        right: 3px;
 
-      transform: scale(-1, 1);
+        transform: scale(-1, 1);
     }
-  }
 }

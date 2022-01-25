@@ -1,162 +1,196 @@
-@use "skin" as *;
-@use "variables" as *;
+@import 'skin';
+@import 'variables';
 
-
-.footer {
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
-
-  background-color: rgba(0, 0, 0, 0.4);
-
-  &-left {
-    @media (max-width: $large) and (min-width: $small + 1) {
-      flex: 0 0 60%;
-    }
-
-    @media (max-width: $small) {
-      flex: 1 0 100%;
-    }
-  }
-
-  &-right {
-    @media (max-width: $large) and (min-width: $small + 1) {
-      flex: 0 0 40%;
-    }
-
-    @media (max-width: $small) {
-      flex: 1 0 100%;
-    }
-  }
-
-  .wrapper {
+.footer
+{
     display: flex;
 
-    margin-top: 37px;
+    width: 100%;
 
-    @media (max-width: $small) {
-      flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, .4);
+
+    justify-content: center;
+
+    &-left
+    {
+        @media (max-width: $large) and (min-width: $small + 1)
+        {
+            flex: 0 0 60%;
+        }
+
+        @media (max-width: $small)
+        {
+            flex: 1 0 100%;
+        }
     }
-  }
 
-  .menu {
-    @media (max-width: $xsmall) {
-      justify-content: center;
+    &-right
+    {
+        @media (max-width: $large) and (min-width: $small + 1)
+        {
+            flex: 0 0 40%;
+        }
+
+        @media (max-width: $small)
+        {
+            flex: 1 0 100%;
+        }
     }
 
-    &__btn {
-      display: none;
+    .wrapper
+    {
+        display: flex;
+
+        margin-top: 37px;
+
+        @media (max-width: $small)
+        {
+            flex-wrap: wrap;
+        }
     }
 
-    &__list {
-      @media (max-width: $large) {
-        top: initial;
-        bottom: 100%;
-      }
+    .menu
+    {
+        @media (max-width: $xsmall)
+        {
+            justify-content: center;
+        }
 
-      &-item {
-        font-size: 0.9rem;
-      }
+        &__btn
+        {
+            display: none;
+        }
+
+        &__list
+        {
+            @media (max-width: $large)
+            {
+                top: initial;
+                bottom: 100%;
+            }
+
+            &-item
+            {
+                font-size: .9rem;
+            }
+        }
     }
-  }
 }
 
-.footer-logo {
-  margin: 15px;
+.footer-logo
+{
+    margin: $gutter;
 
-  @media (min-width: $small + 1) {
-    text-align: right;
-  }
+    @media (min-width: $small + 1)
+    {
+        text-align: right;
+    }
 
-  @media (max-width: $small) {
-    text-align: center;
-  }
+    @media (max-width: $small)
+    {
+        text-align: center;
+    }
 }
 
-.twitter {
-  display: flex;
-  flex-wrap: wrap;
+.twitter
+{
+    display: flex;
 
-  &__image {
-    flex: 0 0 55px;
-  }
+    flex-wrap: wrap;
 
-  &__description {
-    flex: 1 0 100px;
-
-    &-title {
-      display: block;
-
-      color: $white-color;
-
-      font-size: 2rem;
+    &__image
+    {
+        flex: 0 0 55px;
     }
 
-    &-slogan {
-      color: #727272;
-    }
-  }
+    &__description
+    {
+        flex: 1 0 100px;
 
-  &__post {
-    position: relative;
+        &-title
+        {
+            font-size: 2rem;
 
-    flex: 1 0 calc(100% - 67px);
+            display: block;
 
-    padding: 20px;
+            color: $white-color;
+        }
 
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.4);
-
-    @media (min-width: $xsmall + 1) {
-      margin: 12px 30px 30px 37px;
-    }
-
-    @media (max-width: $xsmall) {
-      margin: 12px 0 30px 37px;
+        &-slogan
+        {
+            color: #727272;
+        }
     }
 
-    &::before {
-      position: absolute;
-      top: -19px;
-      left: 0;
+    &__post
+    {
+        position: relative;
 
-      content: url("../img/twitter-speech-bubble.png");
+        padding: 20px;
+
+        border-radius: 10px;
+        background: rgba(0, 0, 0, .4);
+
+        flex: 1 0 calc(100% - 67px);
+
+        @media (min-width: $xsmall + 1)
+        {
+            margin: 12px 30px 30px 37px;
+        }
+
+        @media (max-width: $xsmall)
+        {
+            margin: 12px 0 30px 37px;
+        }
+
+        &::before
+        {
+            position: absolute;
+            top: -19px;
+            left: 0;
+
+            content: url('../img/twitter-speech-bubble.png');
+        }
     }
-  }
 
-  &__post-text {
-    color: $base-color;
+    &__post-text
+    {
+        line-height: 18px;
 
-    line-height: 18px;
-  }
+        color: $base-color;
+    }
 
-  &__post-date {
-    color: $accent-color;
+    &__post-date
+    {
+        font-size: .83rem;
+        font-style: italic;
 
-    font-size: 0.83rem;
-    font-style: italic;
-  }
+        color: $accent-color;
+    }
 }
 
-.copyright {
-  color: $white-color;
+.copyright
+{
+    color: $white-color;
 
-  @media (min-width: $large + 1) {
-    margin: 57px $gutter $gutter $gutter;
+    @media (min-width: $large + 1)
+    {
+        margin: 57px $gutter $gutter $gutter;
 
-    text-align: right;
-  }
+        text-align: right;
+    }
 
-  @media (max-width: $large) and (min-width: $small + 1) {
-    margin: $gutter*5 $gutter $gutter $gutter;
+    @media (max-width: $large) and (min-width: $small + 1)
+    {
+        margin: $gutter*5 $gutter $gutter $gutter;
 
-    text-align: right;
-  }
+        text-align: right;
+    }
 
-  @media (max-width: $small) {
-    margin: $gutter*2 $gutter $gutter $gutter;
+    @media (max-width: $small)
+    {
+        margin: $gutter*2 $gutter $gutter $gutter;
 
-    text-align: center;
-  }
+        text-align: center;
+    }
 }

@@ -1,75 +1,83 @@
-@use "skin" as *;
-@use "variables" as *;
+@import 'skin';
+@import 'variables';
 
-
-.left-sidebar {
-  position: relative;
-
-  background-color: $light-color;
-
-  @media (min-width: $small + 1) {
-    flex: 0 0 300px;
-    order: 2;
-
-    padding: 0 15px 15px $gap;
-
-    &::after {
-      position: absolute;
-      top: 15px;
-      right: 0;
-
-      height: 90%;
-
-      content: "";
-
-      border-right: 1px solid darken($light-color, 7%);
-    }
-  }
-  @media (max-width: $small) {
-    flex: 1 0 100%;
-    order: 3;
-
-    padding: 0 $gap $gap $gap;
-  }
-
-  ul {
-    padding-left: $gap;
-  }
-
-  li {
+.left-sidebar
+{
     position: relative;
 
-    padding: 15px/2;
+    background-color: $light-color;
 
-    list-style: none;
+    @media (min-width: $small + 1)
+    {
+        padding: 0 $gutter $gutter $gap;
 
-    color: $base-color;
+        flex: 0 0 300px;
+        order: 2;
 
-    font-style: italic;
+        &::after
+        {
+            position: absolute;
+            top: $gutter;
+            right: 0;
 
-    &::before {
-      position: absolute;
+            height: 90%;
 
-      margin-left: -15px;
+            content: '';
 
-      content: url("../img/main-list-arrow.png");
+            border-right: 1px solid darken($light-color, 7%);
+        }
+    }
+    @media (max-width: $small)
+    {
+        padding: 0 $gap $gap $gap;
+
+        flex: 1 0 100%;
+        order: 3;
     }
 
-    span {
-      position: relative;
+    ul
+    {
+        padding-left: $gap;
+    }
 
-      &::after {
+    li
+    {
+        font-style: italic;
+
         position: relative;
-        right: 0;
-        //bottom: -15px/3*2;
-        left: 0;
 
-        height: 1px;
+        padding: 7.5px;
 
-        content: "";
+        list-style: none;
 
-        background-color: darken($light-color, 7%);
-      }
+        color: $base-color;
+
+        &::before
+        {
+            position: absolute;
+
+            margin-left: -$gutter;
+
+            content: url('../img/main-list-arrow.png');
+        }
+
+        span
+        {
+            position: relative;
+
+            &::after
+            {
+                position: relative;
+                right: 0;
+                bottom: -10px;
+                left: 0;
+
+                height: 1px;
+
+                content: '';
+
+                background-color: darken($light-color, 7%);
+            }
+        }
     }
-  }
 }
