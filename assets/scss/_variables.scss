@@ -1,11 +1,9 @@
 $large: 850px;
 $small: 768px;
 $xsmall: 576px;
-
 $gutter: 15px;
 $gap: 20px;
 $gap-x2: $gap * 2;
-
 $col-size: 300px;
 
 @media (min-width: $large + 1) {

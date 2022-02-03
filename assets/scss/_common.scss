@@ -1,5 +1,5 @@
-@import 'skin';
-@import 'variables';
+@import "skin";
+@import "variables";
 
 * {
     box-sizing: border-box;
@@ -12,23 +12,22 @@ html {
 
 body {
     display: flex;
+    align-items: center;
     flex-direction: column;
 
-    background: url('../img/background.jpg');
+    background: url("../img/background.jpg");
     background-color: #3a3a3a;
     background-position: 50% 0;
-
-    align-items: center;
 }
 
 
 h2 {
-    font-size: 2rem;
-    font-weight: normal;
-
     margin: 10px 0;
 
     color: $accent-color;
+
+    font-size: 2rem;
+    font-weight: normal;
 }
 
 a {
@@ -41,9 +40,9 @@ h3 {
 }
 
 p {
-    line-height: 1.75;
-
     color: $base-color;
+
+    line-height: 1.75;
 }
 
 i {
@@ -55,8 +54,8 @@ li {
 }
 
 .wrapper {
+    flex-grow: 1;
+
     max-width: $large;
     padding: 0 $gutter;
-
-    flex-grow: 1;
 }

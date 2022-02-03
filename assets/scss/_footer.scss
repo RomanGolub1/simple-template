@@ -1,14 +1,13 @@
-@import 'skin';
-@import 'variables';
+@import "skin";
+@import "variables";
 
 .footer {
     display: flex;
+    justify-content: center;
 
     width: 100%;
 
-    background-color: rgba(0, 0, 0, .4);
-
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
 
     &-left {
         @media (max-width: $large) and (min-width: $small + 1) {
@@ -56,7 +55,7 @@
             }
 
             &-item {
-                font-size: .9rem;
+                font-size: 0.9rem;
             }
         }
     }
@@ -76,7 +75,6 @@
 
 .twitter {
     display: flex;
-
     flex-wrap: wrap;
 
     &__image {
@@ -87,11 +85,11 @@
         flex: 1 0 100px;
 
         &-title {
-            font-size: 2rem;
-
             display: block;
 
             color: $white-color;
+
+            font-size: 2rem;
         }
 
         &-slogan {
@@ -102,12 +100,12 @@
     &__post {
         position: relative;
 
+        flex: 1 0 calc(100% - 67px);
+
         padding: 20px;
 
         border-radius: 10px;
-        background: rgba(0, 0, 0, .4);
-
-        flex: 1 0 calc(100% - 67px);
+        background: rgba(0, 0, 0, 0.4);
 
         @media (min-width: $xsmall + 1) {
             margin: 12px 30px 30px 37px;
@@ -122,21 +120,21 @@
             top: -19px;
             left: 0;
 
-            content: url('../img/twitter-speech-bubble.png');
+            content: url("../img/twitter-speech-bubble.png");
         }
     }
 
     &__post-text {
-        line-height: 18px;
-
         color: $base-color;
+
+        line-height: 18px;
     }
 
     &__post-date {
-        font-size: .83rem;
-        font-style: italic;
-
         color: $accent-color;
+
+        font-size: 0.83rem;
+        font-style: italic;
     }
 }
 

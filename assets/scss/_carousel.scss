@@ -1,15 +1,15 @@
-@import 'skin';
-@import 'variables';
+@import "skin";
+@import "variables";
 
 .carousel {
     position: relative;
+
+    order: 1;
 
     width: 100%;
     padding: $gutter;
 
     background-color: $light-color;
-
-    order: 1;
 }
 
 .carousel-slides {
@@ -22,10 +22,10 @@
 
     display: flex;
 
-    transition: opacity .5s;
+    transition: opacity 0.5s;
 
     opacity: 0;
-    border: 7px solid #fff;
+    border: 7px solid #ffffff;
     background-image: url(../img/carousel-item-bg.png);
     background-position: 50% 50%;
     background-size: cover;
@@ -45,10 +45,9 @@
 
 .carousel-slide__image {
     display: flex;
+    align-items: center;
 
     padding: $gutter;
-
-    align-items: center;
 
     @media (min-width: $large + 1) {
         flex: 0 0 250px;
@@ -71,15 +70,15 @@
 
 .carousel-slide__text {
     @media (min-width: $small + 1) {
-        padding: $gutter $gutter*2 $gutter $gutter;
-
         flex-grow: 1;
+
+        padding: $gutter $gutter*2 $gutter $gutter;
     }
 
     @media (max-width: $small) {
-        padding: 0 $gutter $gutter $gutter;
-
         flex: 1 0 100%;
+
+        padding: 0 $gutter $gutter $gutter;
     }
 
 
@@ -89,12 +88,13 @@
         color: $white-color;
 
         @media (min-width: $small + 1) {
-            margin: $gutter 0;
-
             flex-grow: 1;
+
+            margin: $gutter 0;
         }
         @media (max-width: $small) {
             overflow: hidden;
+            flex: 1 0 100%;
 
             max-width: calc(100vw - 135px);
             margin: 0 0 $gutter 0;
@@ -102,27 +102,25 @@
             text-align: center;
             white-space: nowrap;
             text-overflow: ellipsis;
-
-            flex: 1 0 100%;
         }
     }
 
     p {
-        font-size: 1rem;
-        line-height: 1.5;
-
         overflow: hidden;
 
         max-height: 70px;
 
         color: $white-color;
 
+        font-size: 1rem;
+        line-height: 1.5;
+
         @media (min-width: $small + 1) {
+            flex-grow: 1;
+
             margin-bottom: $gutter;
 
             text-align: justify;
-
-            flex-grow: 1;
         }
 
         @media (max-width: $small) {
