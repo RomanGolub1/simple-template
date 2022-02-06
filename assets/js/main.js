@@ -37,3 +37,4 @@ let prevClickHandler = () => {
 
 $nextBtn.on('click', nextClickHandler);
 $prevBtn.on('click', prevClickHandler);
+
